@@ -1,0 +1,10 @@
+name = "Deletes the database"
+description = "Should this even exist"
+
+connectivity_policy {
+    allow_deployments_to_no_targets = true
+}
+
+run_retention_policy {
+    should_keep_forever = true
+}
