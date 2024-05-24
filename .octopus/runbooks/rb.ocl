@@ -6,5 +6,5 @@ connectivity_policy {
 }
 
 run_retention_policy {
-    should_keep_forever = true
+    quantity_to_keep = 100
 }
