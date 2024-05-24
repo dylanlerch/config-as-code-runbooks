@@ -1,7 +1,7 @@
 name = "Git Runbook"
 description = "It's a Runbook called Git Runbook, but it's on a branch"
 
-connectivity_policy {
+connectivity_policy {{{{{{{{{
     allow_deployments_to_no_targets = true
 }
 
