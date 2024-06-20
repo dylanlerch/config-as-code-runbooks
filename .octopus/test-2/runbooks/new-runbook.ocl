@@ -57,15 +57,26 @@ process {
 
     step "run-a-script-3" {
         name = "Run a Script 3"
+        package_requirement = "AfterPackageAcquisition"
+        properties = {
+            Octopus.Action.MaxParallelism = "2400x800"
+            Octopus.Action.TargetRoles = "foo,bar,baz,a,asdf,sdfsdf,sdfsdfsdfsdf,erwerwe,werwerwer,werwerewrwerwer,🏊‍♀️🏊‍♀️🏊‍♀️🏊‍♀️🏊‍♀️,🦹🏾"
+        }
+        start_trigger = "StartWithPrevious"
 
         action {
             action_type = "Octopus.Script"
+            environments = ["development"]
             properties = {
+                Octopus.Action.AutoRetry.MaximumCount = "3"
+                Octopus.Action.EnabledFeatures = "Octopus.Features.SubstituteInFiles,Octopus.Features.SelectPowerShellEditionForWindows"
+                Octopus.Action.ExecutionTimeout.Minutes = "11"
+                Octopus.Action.PowerShell.Edition = "Core"
+                Octopus.Action.RunOnServer = "false"
                 Octopus.Action.Script.ScriptBody = "Write-Host \"Hello World\""
                 Octopus.Action.Script.ScriptSource = "Inline"
                 Octopus.Action.Script.Syntax = "PowerShell"
             }
-            worker_pool = "hosted-ubuntu"
         }
     }
 }
