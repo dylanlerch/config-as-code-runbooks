@@ -57,7 +57,6 @@ process {
 
     step "run-a-script-3" {
         name = "Run a Script 3"
-        package_requirement = "AfterPackageAcquisition"
         properties = {
             Octopus.Action.MaxParallelism = "2400x800"
             Octopus.Action.TargetRoles = "foo,bar,baz,a,asdf,sdfsdf,sdfsdfsdfsdf,erwerwe,werwerwer,werwerewrwerwer,🏊‍♀️🏊‍♀️🏊‍♀️🏊‍♀️🏊‍♀️,🦹🏾"
@@ -76,6 +75,39 @@ process {
                 Octopus.Action.Script.ScriptBody = "Write-Host \"Hello World\""
                 Octopus.Action.Script.ScriptSource = "Inline"
                 Octopus.Action.Script.Syntax = "PowerShell"
+            }
+
+            packages "Foo" {
+                acquisition_location = "Server"
+                feed = "octopus-server-built-in"
+                package_id = "Foo"
+                properties = {
+                    Extract = "True"
+                    Purpose = ""
+                    SelectionMode = "immediate"
+                }
+            }
+
+            packages "Foo2" {
+                acquisition_location = "NotAcquired"
+                feed = "octopus-server-built-in"
+                package_id = "Foo"
+                properties = {
+                    Extract = "True"
+                    Purpose = ""
+                    SelectionMode = "immediate"
+                }
+            }
+
+            packages "Foo3" {
+                acquisition_location = "Server"
+                feed = "octopus-server-built-in"
+                package_id = "Foo"
+                properties = {
+                    Extract = "False"
+                    Purpose = ""
+                    SelectionMode = "immediate"
+                }
             }
         }
     }
