@@ -63,9 +63,10 @@ process {
         }
         start_trigger = "StartWithPrevious"
 
-        action {
+        action "run-a-script-3" {
             action_type = "Octopus.Script"
             environments = ["development"]
+            name = "Run a Script 3"
             properties = {
                 Octopus.Action.AutoRetry.MaximumCount = "3"
                 Octopus.Action.EnabledFeatures = "Octopus.Features.SubstituteInFiles,Octopus.Features.SelectPowerShellEditionForWindows"
@@ -109,6 +110,19 @@ process {
                     SelectionMode = "immediate"
                 }
             }
+        }
+
+        action "run-an-azure-script" {
+            action_type = "Octopus.AzurePowerShell"
+            name = "Run an Azure Script"
+            properties = {
+                Octopus.Action.Azure.AccountId = "#{fooooooo}"
+                Octopus.Action.Script.ScriptBody = "lkhkjhhjkhkj"
+                Octopus.Action.Script.ScriptSource = "Inline"
+                Octopus.Action.Script.Syntax = "PowerShell"
+                OctopusUseBundledTooling = "False"
+            }
+            worker_pool = "hosted-ubuntu"
         }
     }
 }
