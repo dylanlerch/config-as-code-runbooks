@@ -9,8 +9,6 @@ variable "test" {
 }
 
 variable "dupe" {
-    value "foo" {}
-
     value "bar" {}
 
     value "baz" {}
