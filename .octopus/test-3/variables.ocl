@@ -2,4 +2,8 @@ variable "foo" {
     value "2" {
         description = ""
     }
+
+    value "3" {
+        description = ""
+    }
 }
