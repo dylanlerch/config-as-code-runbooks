@@ -6,6 +6,4 @@ variable "test" {
     value "one" {}
 
     value "two" {}
-
-    value "three" {}
 }
