@@ -12,8 +12,4 @@ variable "dupe" {
     value "bar" {}
 
     value "baz" {}
-
-    value "foo2" {
-        description = ""
-    }
 }
