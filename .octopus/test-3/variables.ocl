@@ -7,3 +7,9 @@ variable "foo" {
         description = ""
     }
 }
+
+variable "n" {
+    value "1" {}
+
+    value "n" {}
+}
