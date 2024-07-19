@@ -19,3 +19,7 @@ variable "k" {
 
     value "k" {}
 }
+
+variable "update me" {
+    value "A" {}
+}
