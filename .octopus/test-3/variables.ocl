@@ -13,3 +13,9 @@ variable "n" {
 
     value "n" {}
 }
+
+variable "k" {
+    value "k" {}
+
+    value "k" {}
+}
