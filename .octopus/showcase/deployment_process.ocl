@@ -16,5 +16,17 @@ step "hello-world-using-powershell" {
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "PowerShell"
         }
+
+        packages "Insults" {
+            acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = "Insults"
+            properties = {
+                Extract = "True"
+                Purpose = ""
+                SelectionMode = "immediate"
+            }
+            version = "0.0.1"
+        }
     }
 }
