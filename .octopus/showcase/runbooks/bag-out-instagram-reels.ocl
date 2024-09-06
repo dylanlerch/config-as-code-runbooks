@@ -32,7 +32,6 @@ process {
                     Purpose = ""
                     SelectionMode = "immediate"
                 }
-                version = "1.0.0"
             }
 
             packages "Insults" {
