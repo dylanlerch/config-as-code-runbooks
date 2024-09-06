@@ -34,6 +34,18 @@ process {
                 }
                 version = "1.0.0"
             }
+
+            packages "Scripts2" {
+                acquisition_location = "Server"
+                feed = "octopus-server-built-in"
+                package_id = "Scripts"
+                properties = {
+                    Extract = "True"
+                    Purpose = ""
+                    SelectionMode = "immediate"
+                }
+                version = "1.0.0"
+            }
         }
     }
 }
