@@ -1,3 +1,13 @@
 variable "Test" {
     value "Test2" {}
 }
+
+variable "Sensitive" {
+    value "#{Sensitive_Development}" {
+        environment = ["development"]
+    }
+
+    value "#{Sensitive_Production}" {
+        environment = ["production"]
+    }
+}
