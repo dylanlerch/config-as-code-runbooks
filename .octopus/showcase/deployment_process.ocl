@@ -26,7 +26,6 @@ step "hello-world-using-powershell" {
                 Purpose = ""
                 SelectionMode = "immediate"
             }
-            version = "0.0.1"
         }
     }
 }
